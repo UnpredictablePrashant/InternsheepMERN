@@ -1,20 +1,19 @@
 # InternsheepMERN
 
-
-Here is the **API documentation** for your **Auth Service** in **Markdown format**:
+This project consists of two main services: **Auth Service** and **User Service**, designed for managing user authentication and profile details in a MERN-based internship platform.
 
 ---
 
-# Auth Service API Documentation
+## **Auth Service API Documentation**
 
-## Base URL
+### **Base URL**
 ```
 https://api.internsheep.in/auth
 ```
 
-## Endpoints
+### **Endpoints**
 
-### **1. Register a User**
+#### **1. Register a User**
 
 - **URL**: `/register`
 - **Method**: `POST`
@@ -43,7 +42,7 @@ https://api.internsheep.in/auth
 
 ---
 
-### **2. Login a User**
+#### **2. Login a User**
 
 - **URL**: `/login`
 - **Method**: `POST`
@@ -77,7 +76,7 @@ https://api.internsheep.in/auth
 
 ---
 
-### **3. Access Protected Route**
+#### **3. Access Protected Route**
 
 - **URL**: `/protected`
 - **Method**: `GET`
@@ -116,7 +115,163 @@ https://api.internsheep.in/auth
 
 ---
 
-## Environment Variables
+## **User Service API Documentation**
+
+### **Base URL**
+```
+https://api.internsheep.in/user
+```
+
+### **Endpoints**
+
+#### **1. Create or Update Profile**
+
+- **URL**: `/profile`
+- **Method**: `POST`
+- **Description**: Creates or updates a user's profile, including optional profile picture upload.
+- **Headers**:
+  ```json
+  {
+    "Authorization": "Bearer <your-jwt-token>"
+  }
+  ```
+- **Request Body**:
+  - Form Data:
+    - Fields:
+      ```json
+      {
+        "firstName": "John",
+        "lastName": "Doe",
+        "dob": "1990-01-01",
+        "gender": "Male",
+        "contactNumber": "1234567890",
+        "address": {
+          "street": "123 Main St",
+          "city": "New York",
+          "state": "NY",
+          "zip": "10001",
+          "country": "USA"
+        }
+      }
+      ```
+    - File:
+      - Key: `file` (Optional)
+      - Value: Upload profile picture.
+- **Response**:
+  - **Success** (200):
+    ```json
+    {
+      "message": "Profile saved successfully",
+      "profile": {
+        // Profile object
+      }
+    }
+    ```
+
+---
+
+#### **2. Get Profile**
+
+- **URL**: `/profile`
+- **Method**: `GET`
+- **Description**: Retrieves the current user's profile.
+- **Headers**:
+  ```json
+  {
+    "Authorization": "Bearer <your-jwt-token>"
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    // Profile object
+  }
+  ```
+
+---
+
+#### **3. Get Profile by ID**
+
+- **URL**: `/profile/:id`
+- **Method**: `GET`
+- **Description**: Retrieves a profile by its ID.
+- **Headers**:
+  ```json
+  {
+    "Authorization": "Bearer <your-jwt-token>"
+  }
+  ```
+
+---
+
+#### **4. Add Education**
+
+- **URL**: `/profile/education`
+- **Method**: `POST`
+- **Description**: Adds education entries to the user's profile.
+- **Headers**:
+  ```json
+  {
+    "Authorization": "Bearer <your-jwt-token>"
+  }
+  ```
+- **Request Body**:
+  ```json
+  [
+    {
+      "degree": "B.Tech",
+      "institution": "Stanford University",
+      "startYear": 2015,
+      "endYear": 2019,
+      "grade": "4.0 GPA"
+    },
+    {
+      "degree": "M.S.",
+      "institution": "MIT",
+      "startYear": 2020,
+      "endYear": 2022,
+      "grade": "3.8 GPA"
+    }
+  ]
+  ```
+
+---
+
+#### **5. Add Work Experience**
+
+- **URL**: `/profile/work`
+- **Method**: `POST`
+- **Description**: Adds work experience entries to the user's profile.
+- **Headers**:
+  ```json
+  {
+    "Authorization": "Bearer <your-jwt-token>"
+  }
+  ```
+
+---
+
+#### **6. Upload Resume**
+
+- **URL**: `/profile/upload-resume`
+- **Method**: `POST`
+- **Description**: Uploads a user's resume.
+- **Headers**:
+  ```json
+  {
+    "Authorization": "Bearer <your-jwt-token>"
+  }
+  ```
+- **Request Body**:
+  - Multipart Form Data:
+    - Key: `file`
+    - Value: Select a file to upload as the resume.
+
+---
+
+## **Environment Variables**
+
+### **Auth Service**
 
 | Variable       | Description                            | Example                                |
 |-----------------|----------------------------------------|----------------------------------------|
@@ -129,48 +284,27 @@ https://api.internsheep.in/auth
 
 ---
 
-## Setup Instructions
+### **User Service**
 
-### **1. Starting the Service**
-Run the service using Docker Compose:
-```bash
-docker compose up --build -d
-```
-
-### **2. Testing the Endpoints**
-
-Use tools like **Postman** or **cURL** to test the endpoints.
-
-#### Example: Register a User
-```bash
-curl -X POST http://localhost/auth/register \
--H "Content-Type: application/json" \
--d '{
-  "email": "testuser@example.com",
-  "password": "securepassword",
-  "role": "student"
-}'
-```
-
-#### Example: Login
-```bash
-curl -X POST http://localhost/auth/login \
--H "Content-Type: application/json" \
--d '{
-  "email": "testuser@example.com",
-  "password": "securepassword"
-}'
-```
+| Variable              | Description                            | Example                                |
+|------------------------|----------------------------------------|----------------------------------------|
+| `PORT`                | The port on which the service runs     | `5001`                                 |
+| `MONGO_URI`           | MongoDB connection string              | `mongodb://mongo:27017/intsheep`       |
+| `JWT_SECRET`          | Secret key for signing JWT tokens      | `someshittyjwttokenisbeingused`        |
+| `REDIS_HOST`          | Redis server hostname                  | `redis`                                |
+| `REDIS_PORT`          | Redis server port                      | `6379`                                 |
+| `AWS_REGION`          | AWS region for S3 bucket               | `us-east-1`                            |
+| `AWS_ACCESS_KEY_ID`   | AWS access key for S3                  | `your-access-key-id`                   |
+| `AWS_SECRET_ACCESS_KEY`| AWS secret access key for S3          | `your-secret-access-key`               |
+| `AWS_S3_BUCKET_NAME`  | AWS S3 bucket name                     | `your-s3-bucket-name`                  |
 
 ---
 
-## Error Codes
+## **Setup Instructions**
 
-| Status Code | Description                        |
-|-------------|------------------------------------|
-| `200`       | Success                            |
-| `201`       | Created                            |
-| `401`       | Unauthorized - Missing or invalid token |
-| `403`       | Forbidden - Access denied          |
-| `404`       | Not Found - User or resource not found |
-| `500`       | Internal Server Error              |
+### **1. Starting the Services**
+
+Run the services using Docker Compose:
+```bash
+docker compose up --build -d
+```

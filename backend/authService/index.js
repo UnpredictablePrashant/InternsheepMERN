@@ -11,19 +11,12 @@ process.on('SIGINT', async () => {
 });
 
 
-// const connectDB = require('./utils/dbconn');
-
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(cors())
 
-
-// Connect to MongoDB
-// connectDB();
-
-// Routes
 const authRoutes = require('./routes/auth.route');
 
 app.use('/auth', authRoutes);
@@ -33,11 +26,5 @@ const PORT = process.env.PORT || 5000;
         console.log(`Auth Service running on port ${PORT}`);
     });
 
-// if (require.main === module) {
-//     const PORT = process.env.PORT || 5000;
-//     app.listen(PORT, () => {
-//         console.log(`Auth Service running on port ${PORT}`);
-//     });
-// }
 
 module.exports = app;
