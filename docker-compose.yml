@@ -68,10 +68,10 @@ services:
       - JWT_SECRET=someshittyjwttokenisbeingused
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - AWS_REGION=your-region
-      - AWS_ACCESS_KEY_ID=your-access-key-id
-      - AWS_SECRET_ACCESS_KEY=your-secret-access-key
-      - AWS_S3_BUCKET_NAME=your-s3-bucket-name
+      - AWS_REGION=ap-south-1
+      - AWS_ACCESS_KEY_ID=XOXAKIA3M7AC6UDBHR37IQ2
+      - AWS_SECRET_ACCESS_KEY=XOXnANkNLMMg/n9QAOp+25L2EbCHtSOMoL8KWz3/fwd
+      - AWS_S3_BUCKET_NAME=internsheep
     depends_on:
       - redis
       - kafka
