@@ -1,0 +1,498 @@
+:root {
+    --light-blue: #00a5f3;
+    --accent-blue: #e7f7ff;
+    --gray: #e7e7e7;
+
+
+}
+
+.home-hero {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        @media only screen and (max-width: 700px) {
+            grid-template-columns: 1fr;
+
+        }
+
+        img {
+            border-radius: 1rem;
+        }
+    }
+}
+
+.home-organisations {
+    h2 {
+        text-align: center;
+    }
+
+    .organisations {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        img {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 1rem;
+        }
+    }
+}
+
+.home-mission {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @media only screen and (max-width: 1000px) {
+            grid-template-columns: 1fr;
+
+        }
+
+        gap: 1rem 2rem;
+
+        .content {
+            height: fit;
+            margin: auto 0;
+
+            p {
+                color: black;
+            }
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            @media only screen and (max-width: 600px) {
+                grid-template-columns: 1fr;
+
+            }
+
+            gap: 1rem;
+        }
+    }
+
+
+}
+
+.home-why-choose {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem 2rem;
+
+        @media only screen and (max-width: 1000px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media only screen and (max-width: 700px) {
+            grid-template-columns: 1fr;
+
+        }
+
+        .card {
+            border-radius: 0.8rem;
+            padding: 1rem;
+
+            border: none;
+            border: 2px solid #f0f0f0;
+
+
+            img {
+                width: 4rem;
+                height: 4rem;
+            }
+
+            h3 {
+                margin-top: 1rem;
+                margin-bottom: 0;
+                font-size: 1.3rem;
+                color: black;
+            }
+
+            p {
+                color: black;
+                margin-top: .3rem;
+                font-weight: 500;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.home-higher-studies {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 2rem;
+
+        @media only screen and (max-width: 1000px) {
+            grid-template-columns: 1fr;
+
+        }
+
+        .card {
+            border-radius: 0.8rem;
+            padding: 1rem;
+            position: relative;
+
+            border: none;
+            width: fit-content;
+
+            h3 {
+                position: absolute;
+                margin-top: 0;
+                padding-top: 0;
+                top: 6%;
+                left: 7%;
+                color: white;
+            }
+
+            button {
+                position: absolute;
+                bottom: 6%;
+                right: 7%;
+            }
+        }
+    }
+}
+
+.home-jumpstart-career {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 30% 66%;
+        gap: 2rem;
+
+        @media only screen and (max-width: 1000px) {
+            grid-template-columns: 1fr;
+
+        }
+
+        h2 {
+            height: fit-content;
+            margin: auto 0;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            @media only screen and (max-width: 700px) {
+                grid-template-columns: 1fr;
+
+            }
+
+            gap: 1rem 2rem;
+
+            .testimonial {
+                background-color: #f0f0f0;
+                padding: 1rem;
+                border-radius: 1rem;
+
+                p {
+                    height: fit-content;
+                    margin: auto;
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+.faqs {
+    .questions {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+}
+
+
+
+.student-login-container {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    @media only screen and (min-width: 800px) {
+
+
+        width: 40%;
+        margin: 2rem auto;
+        border-radius: 10px !important;
+
+    }
+
+
+    .login-form {
+        margin: 0 !important;
+        padding: 2rem;
+
+    }
+
+    .already-user {
+        p {
+            color: black;
+        }
+
+        a {
+            color: blue;
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.register-org-hero {
+
+    background-color: white;
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 70% 25%;
+        gap: 1rem;
+    }
+
+    .form-container {
+        padding: 1rem;
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+
+            label {
+                color: black;
+                margin-bottom: 3px;
+                font-weight: 500;
+                font-size: .9rem;
+            }
+
+            input {
+                border: 1px solid rgb(209, 209, 209);
+                border-radius: 5px;
+            }
+
+            .form-group {
+                margin-bottom: 0;
+            }
+
+            .submit-btn {
+
+                @media only screen and (min-width: 1000px) {
+                    grid-column: span 2;
+
+                }
+            }
+
+            .forget-pass {
+                width: fit-content;
+                margin-left: auto;
+                margin-top: 1rem;
+            }
+
+
+        }
+
+        .already-user {
+            margin-top: 0;
+            color: black;
+            width: fit-content;
+
+            a {
+                color: blue !important;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
+
+    .banner {
+        height: fit-content;
+        margin: auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+
+}
+
+.stats-container {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    .stat {
+        max-width: 8rem;
+        text-align: center;
+
+        h3 {
+            line-height: 1.2;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #303030;
+        }
+
+        p {
+            font-weight: 600;
+            color: black;
+            font-size: 2.3rem;
+        }
+    }
+
+}
+
+.register-org-pricing {
+    background-color: white;
+    h2{
+        text-align: center;
+    }
+
+    .banner {
+        background-color: var(--accent-blue);
+        padding: 3rem;
+        border-radius: 1rem;
+
+        @media only screen and (min-width: 1000px) {
+            width: 50%;
+            margin: auto;
+        }
+
+        h5 {
+            font-size: .8rem;
+            font-weight: 500;
+            background-color: white;
+            padding: 2px 15px;
+            width: fit-content;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+
+        h3 {
+            margin-top: 1.5rem;
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-top: 1.5rem;
+
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding-left: 1rem;
+
+            li {
+                font-size: .95rem;
+                color: black;
+            }
+        }
+
+
+        .pricing-button {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+
+            .pricing {
+                display: flex;
+                gap: 1rem;
+                height: fit-content;
+                margin: auto 0;
+
+                p {
+                    color: black;
+                    margin-bottom: 0;
+                }
+
+                .old {
+                    p {
+                        font-size: 1rem;
+                        text-decoration: line-through;
+
+                    }
+                }
+
+                .new {
+                    p {
+                        font-size: 2rem;
+                        color: var(--light-blue);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.register-org-mission {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @media only screen and (max-width: 1000px) {
+            grid-template-columns: 1fr;
+
+        }
+
+        gap: 1rem 2rem;
+
+        .content {
+            height: fit;
+            margin: auto 0;
+
+            p {
+                color: black;
+            }
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            @media only screen and (max-width: 600px) {
+                grid-template-columns: 1fr;
+
+            }
+
+            gap: 1rem;
+        }
+    }
+
+
+}
+
+
+
+.register-org-organisations {
+    h2 {
+        text-align: center;
+    }
+
+    .organisations {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        img {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 1rem;
+        }
+    }
+}

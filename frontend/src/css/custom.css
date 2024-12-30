@@ -1,0 +1,396 @@
+:root {
+  --light-blue: #00a5f3;
+  --accent-blue: #e7f7ff;
+  --gray: #e7e7e7;
+}
+
+.home-hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+@media only screen and (max-width: 700px) {
+  .home-hero .container {
+    grid-template-columns: 1fr;
+  }
+}
+.home-hero .container img {
+  border-radius: 1rem;
+}
+
+.home-organisations h2 {
+  text-align: center;
+}
+.home-organisations .organisations {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.home-organisations .organisations img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1rem;
+}
+
+.home-mission .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+@media only screen and (max-width: 1000px) {
+  .home-mission .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+.home-mission .grid-container .content {
+  height: fit;
+  margin: auto 0;
+}
+.home-mission .grid-container .content p {
+  color: black;
+}
+.home-mission .grid-container .gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  .home-mission .grid-container .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-why-choose .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem 2rem;
+}
+@media only screen and (max-width: 1000px) {
+  .home-why-choose .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .home-why-choose .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+.home-why-choose .grid-container .card {
+  border-radius: 0.8rem;
+  padding: 1rem;
+  border: none;
+  border: 2px solid #f0f0f0;
+}
+.home-why-choose .grid-container .card img {
+  width: 4rem;
+  height: 4rem;
+}
+.home-why-choose .grid-container .card h3 {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 1.3rem;
+  color: black;
+}
+.home-why-choose .grid-container .card p {
+  color: black;
+  margin-top: 0.3rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.home-higher-studies .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+@media only screen and (max-width: 1000px) {
+  .home-higher-studies .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+.home-higher-studies .grid-container .card {
+  border-radius: 0.8rem;
+  padding: 1rem;
+  position: relative;
+  border: none;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.home-higher-studies .grid-container .card h3 {
+  position: absolute;
+  margin-top: 0;
+  padding-top: 0;
+  top: 6%;
+  left: 7%;
+  color: white;
+}
+.home-higher-studies .grid-container .card button {
+  position: absolute;
+  bottom: 6%;
+  right: 7%;
+}
+
+.home-jumpstart-career .grid-container {
+  display: grid;
+  grid-template-columns: 30% 66%;
+  gap: 2rem;
+}
+@media only screen and (max-width: 1000px) {
+  .home-jumpstart-career .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+.home-jumpstart-career .grid-container h2 {
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+.home-jumpstart-career .grid-container .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+@media only screen and (max-width: 700px) {
+  .home-jumpstart-career .grid-container .content {
+    grid-template-columns: 1fr;
+  }
+}
+.home-jumpstart-career .grid-container .content .testimonial {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.home-jumpstart-career .grid-container .content .testimonial p {
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+  color: black;
+}
+
+.faqs .questions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.student-login-container {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+@media only screen and (min-width: 800px) {
+  .student-login-container {
+    width: 40%;
+    margin: 2rem auto;
+    border-radius: 10px !important;
+  }
+}
+.student-login-container .login-form {
+  margin: 0 !important;
+  padding: 2rem;
+}
+.student-login-container .already-user p {
+  color: black;
+}
+.student-login-container .already-user a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.register-org-hero {
+  background-color: white;
+}
+.register-org-hero .grid-container {
+  display: grid;
+  grid-template-columns: 70% 25%;
+  gap: 1rem;
+}
+.register-org-hero .form-container {
+  padding: 1rem;
+}
+.register-org-hero .form-container form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.register-org-hero .form-container form label {
+  color: black;
+  margin-bottom: 3px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.register-org-hero .form-container form input {
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 5px;
+}
+.register-org-hero .form-container form .form-group {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 1000px) {
+  .register-org-hero .form-container form .submit-btn {
+    grid-column: span 2;
+  }
+}
+.register-org-hero .form-container form .forget-pass {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-top: 1rem;
+}
+.register-org-hero .form-container .already-user {
+  margin-top: 0;
+  color: black;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.register-org-hero .form-container .already-user a {
+  color: blue !important;
+}
+.register-org-hero .form-container .already-user a:hover {
+  text-decoration: underline;
+}
+.register-org-hero .banner {
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+}
+.register-org-hero .banner img {
+  width: 100%;
+}
+
+.stats-container {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.stats-container .stat {
+  max-width: 8rem;
+  text-align: center;
+}
+.stats-container .stat h3 {
+  line-height: 1.2;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #303030;
+}
+.stats-container .stat p {
+  font-weight: 600;
+  color: black;
+  font-size: 2.3rem;
+}
+
+.register-org-pricing {
+  background-color: white;
+}
+.register-org-pricing h2 {
+  text-align: center;
+}
+.register-org-pricing .banner {
+  background-color: var(--accent-blue);
+  padding: 3rem;
+  border-radius: 1rem;
+}
+@media only screen and (min-width: 1000px) {
+  .register-org-pricing .banner {
+    width: 50%;
+    margin: auto;
+  }
+}
+.register-org-pricing .banner h5 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: white;
+  padding: 2px 15px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+.register-org-pricing .banner h3 {
+  margin-top: 1.5rem;
+}
+.register-org-pricing .banner h4 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+.register-org-pricing .banner ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 1rem;
+}
+.register-org-pricing .banner ul li {
+  font-size: 0.95rem;
+  color: black;
+}
+.register-org-pricing .banner .pricing-button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.register-org-pricing .banner .pricing-button .pricing {
+  display: flex;
+  gap: 1rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+.register-org-pricing .banner .pricing-button .pricing p {
+  color: black;
+  margin-bottom: 0;
+}
+.register-org-pricing .banner .pricing-button .pricing .old p {
+  font-size: 1rem;
+  text-decoration: line-through;
+}
+.register-org-pricing .banner .pricing-button .pricing .new p {
+  font-size: 2rem;
+  color: var(--light-blue);
+}
+
+.register-org-mission .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+@media only screen and (max-width: 1000px) {
+  .register-org-mission .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+.register-org-mission .grid-container .content {
+  height: fit;
+  margin: auto 0;
+}
+.register-org-mission .grid-container .content p {
+  color: black;
+}
+.register-org-mission .grid-container .gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  .register-org-mission .grid-container .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.register-org-organisations h2 {
+  text-align: center;
+}
+.register-org-organisations .organisations {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.register-org-organisations .organisations img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1rem;
+}
