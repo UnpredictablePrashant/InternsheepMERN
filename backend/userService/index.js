@@ -1,12 +1,15 @@
 require('dotenv').config(); // Load environment variables
 const express = require('express');
 const userRoutes = require('./routes/user.route'); // User routes
+const cors = require('cors')
+
 
 const app = express();
 
 // Middleware
 app.use(express.json()); // Parse JSON requests
 
+app.use(cors())
 
 // Register Routes
 app.use('/user', userRoutes);

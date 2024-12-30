@@ -78,6 +78,29 @@ services:
     networks:
       - app-network
 
+  companyservice:
+    build:
+      context: ./backend/companyService
+      dockerfile: Dockerfile
+    container_name: companyservice
+    ports:
+      - "5002:5002"
+    environment:
+      - PORT=5002
+      - MONGO_URI=mongodb+srv://shrikarlonkar:wYkbmyFIj9iRDmPe@cluster0.gp5lvzy.mongodb.net/intsheep
+      - JWT_SECRET=someshittyjwttokenisbeingused
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - AWS_REGION=ap-south-1
+      - AWS_ACCESS_KEY_ID=XOXAKIA3M7AC6UDBHR37IQ2
+      - AWS_SECRET_ACCESS_KEY=XOXnANkNLMMg/n9QAOp+25L2EbCHtSOMoL8KWz3/fwd
+      - AWS_S3_BUCKET_NAME=internsheep
+    depends_on:
+      - redis
+      - kafka
+    networks:
+      - app-network
+
 networks:
   app-network:
     driver: bridge
