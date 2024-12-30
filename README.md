@@ -1,6 +1,6 @@
-# InternsheepMERN
+# Internsheep
 
-This project consists of two main services: **Auth Service** and **User Service**, designed for managing user authentication and profile details in a MERN-based internship platform.
+This project consists of three main services: **Auth Service**, **User Service** and **Company Service**, designed for managing user authentication, profile details of users and company.
 
 ---
 
@@ -249,6 +249,118 @@ https://api.internsheep.in/user
   }
   ```
 
+## **Company Service API Documentation**
+
+### **Base URL**
+```
+https://api.internsheep.in/company
+```
+
+### **Endpoints**
+
+#### **1. Create or Update Company**
+
+- **URL**: `/`
+- **Method**: `POST`
+- **Description**: Creates or updates a company for the logged-in user with the "company" role.
+- **Headers**:
+  ```json
+  {
+    "Authorization": "Bearer <your-jwt-token>"
+  }
+  ```
+- **Request Body**:
+  ```json
+  {
+    "name": "Tech Innovators",
+    "contactNumber": "1234567890",
+    "website": "https://techinnovators.com",
+    "address": {
+      "street": "123 Innovation Drive",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94103",
+      "country": "USA"
+    }
+  }
+  ```
+- **Response**:
+  - **Success (Create)** (201):
+    ```json
+    {
+      "message": "Company created successfully",
+      "company": {
+        // Company object
+      }
+    }
+    ```
+  - **Success (Update)** (200):
+    ```json
+    {
+      "message": "Company updated successfully",
+      "company": {
+        // Updated company object
+      }
+    }
+    ```
+
+---
+
+#### **2. Get Company**
+
+- **URL**: `/`
+- **Method**: `GET`
+- **Description**: Retrieves the logged-in user's company details.
+- **Headers**:
+  ```json
+  {
+    "Authorization": "Bearer <your-jwt-token>"
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    // Company object
+  }
+  ```
+
+---
+
+#### **3. Upload Company Logo**
+
+- **URL**: `/logo`
+- **Method**: `POST`
+- **Description**: Uploads a company logo for the logged-in user's company.
+- **Headers**:
+  ```json
+  {
+    "Authorization": "Bearer <your-jwt-token>"
+  }
+  ```
+- **Request Body**:
+  - **Multipart Form Data**:
+    - Key: `file`
+    - Value: Select a file to upload as the logo.
+
+---
+
+#### **4. Delete Company**
+
+- **URL**: `/`
+- **Method**: `DELETE`
+- **Description**: Deletes the logged-in user's company.
+- **Headers**:
+  ```json
+  {
+    "Authorization": "Bearer <your-jwt-token>"
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "message": "Company deleted successfully"
+  }
+  ```
 ---
 
 #### **6. Upload Resume**
@@ -289,6 +401,22 @@ https://api.internsheep.in/user
 | Variable              | Description                            | Example                                |
 |------------------------|----------------------------------------|----------------------------------------|
 | `PORT`                | The port on which the service runs     | `5001`                                 |
+| `MONGO_URI`           | MongoDB connection string              | `mongodb://mongo:27017/intsheep`       |
+| `JWT_SECRET`          | Secret key for signing JWT tokens      | `someshittyjwttokenisbeingused`        |
+| `REDIS_HOST`          | Redis server hostname                  | `redis`                                |
+| `REDIS_PORT`          | Redis server port                      | `6379`                                 |
+| `AWS_REGION`          | AWS region for S3 bucket               | `us-east-1`                            |
+| `AWS_ACCESS_KEY_ID`   | AWS access key for S3                  | `your-access-key-id`                   |
+| `AWS_SECRET_ACCESS_KEY`| AWS secret access key for S3          | `your-secret-access-key`               |
+| `AWS_S3_BUCKET_NAME`  | AWS S3 bucket name                     | `your-s3-bucket-name`                  |
+
+---
+
+### **Company Service**
+
+| Variable              | Description                            | Example                                |
+|------------------------|----------------------------------------|----------------------------------------|
+| `PORT`                | The port on which the service runs     | `5002`                                 |
 | `MONGO_URI`           | MongoDB connection string              | `mongodb://mongo:27017/intsheep`       |
 | `JWT_SECRET`          | Secret key for signing JWT tokens      | `someshittyjwttokenisbeingused`        |
 | `REDIS_HOST`          | Redis server hostname                  | `redis`                                |
